@@ -1,4 +1,9 @@
-## lost signals
+---
+title: lost signals
+date: 2023-10-01
+tags:
+  - grief
+---
 
 It has been three years since we lost J to cancer.
 
