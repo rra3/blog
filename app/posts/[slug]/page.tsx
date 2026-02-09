@@ -32,6 +32,7 @@ export default async function PostPage({
         ))}
       </ul>
       <article dangerouslySetInnerHTML={{ __html: html }} />
+      <Link href="/" className="text-sm no-underline">&larr; back</Link>
     </>
   );
 }
