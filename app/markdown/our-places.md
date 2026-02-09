@@ -3,6 +3,7 @@ title: our places
 date: 2024-06-30
 tags:
   - grief
+  - poem
 image: /images/our-places.jpg
 image_layout: side
 ---
