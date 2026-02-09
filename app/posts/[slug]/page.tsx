@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { renderMarkDown, getAllPosts } from "@/app/lib/markdown";
 
 export async function generateStaticParams() {
@@ -31,7 +32,14 @@ export default async function PostPage({
           </li>
         ))}
       </ul>
-      <article dangerouslySetInnerHTML={{ __html: html }} />
+      <div className={meta.image ? "flex flex-col gap-8 md:flex-row" : ""}>
+        <article className="min-w-0 flex-1" dangerouslySetInnerHTML={{ __html: html }} />
+        {meta.image && (
+          <div className="not-prose shrink-0 md:ml-8 md:max-w-[250px]">
+            <img src={meta.image} alt="" className="w-full rounded" />
+          </div>
+        )}
+      </div>
       <Link href="/" className="text-sm no-underline">&larr; back</Link>
     </>
   );

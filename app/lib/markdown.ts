@@ -2,12 +2,14 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { remark} from "remark";
 import html from "remark-html";
+import breaks from "remark-breaks";
 import matter from "gray-matter";
 
 export interface MarkdownMeta {
     title: string;
     date: string;
     tags: string[];
+    image?: string;
 }
 
 export async function renderMarkDown(filename: string) {
@@ -20,7 +22,7 @@ export async function renderMarkDown(filename: string) {
 
     const source = await readFile(filePath, "utf8");
     const { content, data } = matter(source);
-    const processed = await remark().use(html).process(content);
+    const processed = await remark().use(breaks).use(html).process(content);
 
     return {
         html: processed.toString(),
@@ -28,6 +30,7 @@ export async function renderMarkDown(filename: string) {
             title: data.title ?? "",
             date: data.date ?? "",
             tags: data.tags ?? [],
+            image: data.image,
         } as MarkdownMeta,
     };
 }

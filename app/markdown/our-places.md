@@ -1,0 +1,60 @@
+---
+title: our places
+date: 2024-06-30
+tags:
+  - grief
+image: /images/our-places.jpg
+---
+
+In a recent photo
+I sit on a patio
+we used to enjoy,
+leaning back, drink
+in hand, smiling.
+
+Early summer,
+so nice to be outside
+before the heavy heat arrived.
+
+But I find it strange that I can still smile
+so easily
+
+after leaving the room
+where you lay
+for the last time.
+
+I can see
+sharing this with you,
+at another of
+our places –
+
+twin green bowls
+on a high top,
+salt rims
+close
+to touching,
+illuminated by
+dimming light
+still dancing
+across the stone floor patio.
+
+Maybe nearby servers clap –
+marching and masked
+*luchadores*. Or the old man
+sings
+with amp and guitar,
+songs from *Blue Hawaii*.
+
+But I share my sad thought,
+and you –
+arms resting on the table,
+long blue sleeves
+cuffed at the elbow,
+allow
+
+that old, familiar smirk
+to break across
+your lined and tanned face,
+telling me
+I have said something foolish
+once again.
