@@ -4,6 +4,7 @@ date: 2024-06-30
 tags:
   - grief
 image: /images/our-places.jpg
+image_layout: side
 ---
 
 In a recent photo

@@ -32,14 +32,21 @@ export default async function PostPage({
           </li>
         ))}
       </ul>
-      <div className={meta.image ? "flex flex-col gap-8 md:flex-row" : ""}>
-        <article className="min-w-0 flex-1" dangerouslySetInnerHTML={{ __html: html }} />
-        {meta.image && (
+      {meta.image && meta.image_layout === "side" ? (
+        <div className="flex flex-col gap-8 md:flex-row">
+          <article className="min-w-0 flex-1" dangerouslySetInnerHTML={{ __html: html }} />
           <div className="not-prose shrink-0 md:ml-8 md:max-w-[250px]">
             <img src={meta.image} alt="" className="w-full rounded" />
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <>
+          {meta.image && (
+            <img src={meta.image} alt="" className="not-prose mb-4 w-full rounded md:float-right md:mb-4 md:ml-8 md:max-w-[250px]" />
+          )}
+          <article dangerouslySetInnerHTML={{ __html: html }} />
+        </>
+      )}
       <Link href="/" className="text-sm no-underline">&larr; back</Link>
     </>
   );

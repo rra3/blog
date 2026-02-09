@@ -10,6 +10,7 @@ export interface MarkdownMeta {
     date: string;
     tags: string[];
     image?: string;
+    image_layout?: "float" | "side";
 }
 
 export async function renderMarkDown(filename: string) {
@@ -31,6 +32,7 @@ export async function renderMarkDown(filename: string) {
             date: data.date ?? "",
             tags: data.tags ?? [],
             image: data.image,
+            image_layout: data.image_layout,
         } as MarkdownMeta,
     };
 }

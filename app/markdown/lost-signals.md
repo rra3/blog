@@ -3,6 +3,7 @@ title: lost signals
 date: 2023-10-01
 tags:
   - grief
+image: /images/lost-signals.jpg
 ---
 
 It has been three years since we lost J to cancer.
