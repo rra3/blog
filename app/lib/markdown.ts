@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { remark} from "remark";
 import html from "remark-html";
@@ -30,4 +30,34 @@ export async function renderMarkDown(filename: string) {
             tags: data.tags ?? [],
         } as MarkdownMeta,
     };
+}
+
+export interface PostSummary {
+    slug: string;
+    title: string;
+    date: string;
+    tags: string[];
+}
+
+export async function getAllPosts(): Promise<PostSummary[]> {
+    const dir = path.join(process.cwd(), "app", "markdown");
+    const files = await readdir(dir);
+
+    const posts: PostSummary[] = [];
+
+    for (const file of files) {
+        if (!file.endsWith(".md")) continue;
+        const source = await readFile(path.join(dir, file), "utf8");
+        const { data } = matter(source);
+        if (!data.date) continue;
+        posts.push({
+            slug: file.replace(/\.md$/, ""),
+            title: data.title ?? "",
+            date: data.date,
+            tags: data.tags ?? [],
+        });
+    }
+
+    posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    return posts;
 }
