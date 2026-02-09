@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { renderMarkDown, getAllPosts } from "@/app/lib/markdown";
 
 export async function generateStaticParams() {
@@ -20,6 +21,7 @@ export default async function PostPage({
   });
   return (
     <>
+      <Link href="/" className="text-sm no-underline">&larr; back</Link>
       <h2>{meta.title}</h2>
       <p className="text-sm text-zinc-500">{formattedDate}</p>
       <ul className="flex list-none gap-2 p-0">
