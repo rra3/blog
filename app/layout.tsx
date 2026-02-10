@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     "atlanta",
   ],
   authors: [{ name: "Robert Arnold" }],
+  alternates: {
+    types: {
+      "application/rss+xml": "https://boblog.ink/feed.xml",
+    },
+  },
   openGraph: {
     title: "bob blog — robert arnold",
     description:
@@ -69,6 +74,7 @@ export default function RootLayout({
                 <a href="https://facebook.com/robertrarnold" target="_blank" rel="noopener noreferrer">facebook</a>
                 <a href="https://bsky.app/profile/x-bob-x.bsky.social" target="_blank" rel="noopener noreferrer">bluesky</a>
                 <a href="https://mastodon.social/@rra3" target="_blank" rel="noopener noreferrer">mastodon</a>
+                <a href="/feed.xml">rss</a>
               </div>
               <p className="mt-4">&copy; {new Date().getFullYear()} robert r arnold III</p>
             </footer>
