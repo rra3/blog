@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { renderMarkDown, getAllPosts } from "@/app/lib/markdown";
 import Comments from "@/app/components/comments";
@@ -5,6 +6,31 @@ import Comments from "@/app/components/comments";
 export async function generateStaticParams() {
   const posts = await getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const { html, meta } = await renderMarkDown(slug);
+  const plainText = html
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const description = plainText.length > 155 ? plainText.slice(0, 152) + "..." : plainText;
+
+  return {
+    title: meta.title,
+    description,
+    openGraph: {
+      title: meta.title,
+      description,
+      type: "article",
+      ...(meta.date ? { publishedTime: new Date(meta.date).toISOString() } : {}),
+    },
+  };
 }
 
 export default async function PostPage({

@@ -15,8 +15,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "bob blog",
-  description: "bob's blog",
+  title: {
+    template: "%s — bob blog",
+    default: "bob blog — robert arnold",
+  },
+  description:
+    "Personal blog by Robert Arnold (Bobby Arnold) — writing from Lawrenceville, Georgia, near Atlanta. Essays, poems, and reflections.",
+  keywords: [
+    "robert arnold",
+    "bobby arnold",
+    "robert r arnold",
+    "robert remsen arnold",
+    "bob arnold",
+    "lawrenceville",
+    "atlanta",
+  ],
+  authors: [{ name: "Robert Arnold" }],
+  openGraph: {
+    title: "bob blog — robert arnold",
+    description:
+      "Personal blog by Robert Arnold (Bobby Arnold) — writing from Lawrenceville, Georgia, near Atlanta. Essays, poems, and reflections.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -50,7 +70,7 @@ export default function RootLayout({
                 <a href="https://bsky.app/profile/x-bob-x.bsky.social" target="_blank" rel="noopener noreferrer">bluesky</a>
                 <a href="https://mastodon.social/@rra3" target="_blank" rel="noopener noreferrer">mastodon</a>
               </div>
-              <p className="mt-4">&copy; {new Date().getFullYear()} bob arnold</p>
+              <p className="mt-4">&copy; {new Date().getFullYear()} robert r arnold III</p>
             </footer>
           </main>
         </div>
