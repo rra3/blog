@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { renderMarkDown, getAllPosts } from "@/app/lib/markdown";
+import Comments from "@/app/components/comments";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -47,6 +47,7 @@ export default async function PostPage({
           <article dangerouslySetInnerHTML={{ __html: html }} />
         </>
       )}
+      <Comments />
       <Link href="/" className="text-sm no-underline">&larr; back</Link>
     </>
   );
