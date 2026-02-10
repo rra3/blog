@@ -41,6 +41,17 @@ export default function RootLayout({
               </Link>
               {children}
             </div>
+            <footer className="not-prose mt-16 w-full border-t border-zinc-200 pt-8 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-500">
+              <div className="flex flex-wrap gap-4">
+                <a href="https://github.com/rra3" target="_blank" rel="noopener noreferrer">github</a>
+                <a href="https://instagram.com/robertrarnold" target="_blank" rel="noopener noreferrer">instagram</a>
+                <a href="https://threads.com/@robertrarnold" target="_blank" rel="noopener noreferrer">threads</a>
+                <a href="https://facebook.com/robertrarnold" target="_blank" rel="noopener noreferrer">facebook</a>
+                <a href="https://bsky.app/profile/x-bob-x.bsky.social" target="_blank" rel="noopener noreferrer">bluesky</a>
+                <a href="https://mastodon.social/@rra3" target="_blank" rel="noopener noreferrer">mastodon</a>
+              </div>
+              <p className="mt-4">&copy; {new Date().getFullYear()} bob arnold</p>
+            </footer>
           </main>
         </div>
         <Analytics />
