@@ -4,6 +4,7 @@ date: 2023-10-01
 tags:
   - grief
 image: /images/lost-signals.jpg
+image_description: April 2009. Six Flags
 ---
 
 It has been three years since we lost J to cancer.

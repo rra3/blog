@@ -4,6 +4,8 @@ date: 2026-02-10T00:00:00Z
 tags:
   - announcement
   - site-update
+image: /images/claude.png
+image_description: frollicking with claude
 ---
 
 ## hey hey hey
@@ -32,6 +34,7 @@ Hopefully the momentum continues!
 
 ## Notes
 
+- [site code repo](https://github.com/rra3/blog)
 - [Claude Code — AI coding assistant](https://claude.com/product/claude-code)
 - [Next.js](https://nextjs.org/)
 - [Vercel](https://vercel.com/)

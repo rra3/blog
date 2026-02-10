@@ -5,6 +5,7 @@ tags:
   - grief
   - poem
 image: /images/our-places.jpg
+image_description: Jenny, May 2014. This was taken at Agavero's Cantina on Lawrenceville Hwy
 image_layout: side
 ---
 
@@ -42,10 +43,10 @@ across the stone floor patio.
 
 Maybe nearby servers clap –
 marching and masked
-*luchadores*. Or the old man
+_luchadores_. Or the old man
 sings
 with amp and guitar,
-songs from *Blue Hawaii*.
+songs from _Blue Hawaii_.
 
 But I share my sad thought,
 and you –

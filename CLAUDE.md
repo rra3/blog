@@ -25,6 +25,9 @@ This is a personal blog built with Next.js 16 (App Router), React 19, Tailwind C
 **Image layouts:** Posts can include an `image` frontmatter field pointing to a file in `public/images/`. The `image_layout` field controls display:
 - Default (float) — image floats right with text wrapping around it (good for prose)
 - `side` — image sits beside content in a flex layout (good for poetry where line breaks matter)
+- Optional `image_description` frontmatter field adds a caption shown in the lightbox overlay
+
+**Image lightbox:** `app/components/post-image.tsx` is a client component that renders thumbnails and opens a fullscreen modal on click. Closes via backdrop click, X button, or Escape. Supports an optional `description` prop for captions.
 
 **Layout:** `app/layout.tsx` contains the shared page shell including:
 - ASCII art header (figlet "small" font) that links to the index
