@@ -24,7 +24,7 @@ In terms of the look and feel - I wannted something simple and raw, reminiscent 
 
 ## what is this about? audience?
 
-What am I going to write here? Initially I just copied over a couple of posts I wrote a few years ago back when I was healing from wife's death - just some creative writing type projects that helped me process through those difficult years. I suppose that is what I will do going forward - not so much grief processing (though there may be that) but creative writing ideas - musings etc. Whatever floats my boat.
+What am I going to write here? Initially I just copied over a couple of posts I wrote a few years ago back when I was healing from my wife's death - just some creative writing type projects that helped me process through those difficult years. I suppose that is what I will do going forward - not so much grief processing (though there may be that) but creative writing ideas - musings etc. Whatever floats my boat.
 
 I had some thoughts to write about specific areas of interest - enneagram, meditation - but I'm considering spinning up something different and more focused for that.
 
