@@ -10,7 +10,7 @@ image_description: frollicking with claude
 
 ## hey hey hey
 
-Aren't personal blogs so... early 2000's or something? Nevertheless, here I am. The truth is I had some down time and needed a project. The original plan was to construct this site using Next.js/React, maybe write some posts about "learnings" (a term from an old workpace) on LinkedIn as a means to hopefully garner some recruiter or network attention (I was out of work for much of 2024).
+Aren't personal blogs so... early 2000's or something? Nevertheless, here I am. The truth is I had some down time and needed a project. The original plan was to construct this site using Next.js/React, maybe write some posts about "learnings" (a term from an old workpace) on LinkedIn as a means to hopefully garner some recruiter or network attention (I was out of work for much of 2025).
 
 ## architecture, such as it is
 
