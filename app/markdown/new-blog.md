@@ -20,7 +20,7 @@ Recently though, this project has picked up steam since I've been playing with C
 
 For some reason I had this obstinate desire to not use a database backend. It just seemed needlessly complicated for a first iteration. So currently all posts are just simple markdown files that are included in my github repo. The initial index reads my list of markdown files and generates a list of links with dates and titles from metadata held in some YAML based frontmatter embedded in each file (one per post). Then I use the remark-html javascript tools to handle html'ifying each markdown file for the article view path.
 
-In terms of the look and feel - I wannted something simple and raw, reminiscent of the old internet days of yore. Mark Fisher's k-punk site was a heavy influence.
+In terms of the look and feel - I wanted something simple and raw, reminiscent of the old internet days of yore. Mark Fisher's k-punk site was a heavy influence.
 
 ## what is this about? audience?
 
