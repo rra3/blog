@@ -5,7 +5,7 @@ tags:
   - grief
   - poem
 image: /images/our-places.jpg
-image_description: Jenny, May 2014. This was taken at Agavero's Cantina on Lawrenceville Hwy
+image_description: Jenny, May 2014. Agavero Cantina in Lilburn, GA
 image_layout: side
 ---
 
