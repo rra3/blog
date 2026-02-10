@@ -12,7 +12,7 @@ No test framework is configured.
 
 ## Architecture
 
-This is a personal blog built with Next.js 16 (App Router), React 19, Tailwind CSS 4, and TypeScript. Deployed on Vercel.
+This is a personal blog built with Next.js 16 (App Router), React 19, Tailwind CSS 4, and TypeScript. Deployed on Vercel at `boblog.ink`.
 
 **Markdown pipeline:** Blog posts are `.md` files in `app/markdown/` with YAML frontmatter (title, date, tags, optional image, optional image_layout). `app/lib/markdown.ts` reads them at build time using `gray-matter` for frontmatter parsing and `remark` + `remark-html` + `remark-breaks` for rendering. Single newlines are preserved as `<br>` (important for poetry formatting). Two key exports:
 - `renderMarkDown(filename)` — takes a filename (without extension), returns `{ html, meta }`

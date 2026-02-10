@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/app/lib/markdown";
 
-const BASE_URL = "https://parareading.ink";
+const BASE_URL = "https://boblog.ink";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();

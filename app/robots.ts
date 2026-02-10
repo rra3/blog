@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://parareading.ink/sitemap.xml",
+    sitemap: "https://boblog.ink/sitemap.xml",
   };
 }
