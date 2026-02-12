@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { renderMarkDown, getAllPosts } from "@/app/lib/markdown";
+import { renderMarkDown, getAllPosts, getPostPlainText } from "@/app/lib/markdown";
 import Comments from "@/app/components/comments";
 import PostImage from "@/app/components/post-image";
 import SpotifyEmbed from "@/app/components/spotify-embed";
@@ -16,11 +16,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const { html, meta } = await renderMarkDown(slug);
-  const plainText = html
-    .replace(/<[^>]*>/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
+  const { meta } = await renderMarkDown(slug);
+  const plainText = await getPostPlainText(slug);
   const description = plainText.length > 155 ? plainText.slice(0, 152) + "..." : plainText;
 
   return {
@@ -41,7 +38,7 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { html, meta } = await renderMarkDown(slug);
+  const { content, meta } = await renderMarkDown(slug);
   const formattedDate = new Date(meta.date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -62,7 +59,7 @@ export default async function PostPage({
       </ul>
       {meta.image && meta.image_layout === "side" ? (
         <div className="flex flex-col gap-8 md:flex-row">
-          <article className="min-w-0 flex-1" dangerouslySetInnerHTML={{ __html: html }} />
+          <article className="min-w-0 flex-1">{content}</article>
           <div className="not-prose shrink-0 md:ml-8 md:max-w-[250px]">
             <PostImage src={meta.image} alt="" className="w-full rounded" description={meta.image_description} />
           </div>
@@ -72,7 +69,7 @@ export default async function PostPage({
           {meta.image && (
             <PostImage src={meta.image} alt="" className="not-prose mb-4 w-full rounded md:float-right md:mb-4 md:ml-8 md:max-w-[250px]" description={meta.image_description} />
           )}
-          <article dangerouslySetInnerHTML={{ __html: html }} />
+          <article>{content}</article>
         </>
       )}
       {meta.spotify && <SpotifyEmbed url={meta.spotify} />}

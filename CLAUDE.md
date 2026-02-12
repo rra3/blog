@@ -14,9 +14,10 @@ No test framework is configured.
 
 This is a personal blog built with Next.js 16 (App Router), React 19, Tailwind CSS 4, and TypeScript. Deployed on Vercel at `boblog.ink`.
 
-**Markdown pipeline:** Blog posts are `.md` files in `app/markdown/` with YAML frontmatter (title, date, tags, optional image, optional image_layout). `app/lib/markdown.ts` reads them at build time using `gray-matter` for frontmatter parsing and `remark` + `remark-html` + `remark-breaks` for rendering. Single newlines are preserved as `<br>` (important for poetry formatting). Two key exports:
-- `renderMarkDown(filename)` — takes a filename (without extension), returns `{ html, meta }`
-- `getAllPosts()` — reads all `.md` files, skips those without a date, returns sorted by date descending
+**MDX pipeline:** Blog posts are `.mdx` files in `app/markdown/` with YAML frontmatter (title, date, tags, optional image, optional image_layout). `app/lib/markdown.ts` uses `compileMDX` from `next-mdx-remote/rsc` for server-side rendering and `gray-matter` for frontmatter parsing. `remark-breaks` is passed as a plugin to preserve single newlines as `<br>` (important for poetry formatting). `PostImage` and `SpotifyEmbed` are registered as MDX components so they can be used inline in posts. Three key exports:
+- `renderMarkDown(filename)` — takes a filename (without extension), returns `{ content: ReactElement, meta }`
+- `getAllPosts()` — reads all `.mdx` files, skips those without a date, returns sorted by date descending
+- `getPostPlainText(filename)` — returns plain text (frontmatter/markup stripped) for SEO descriptions
 
 **Routing:**
 - `app/page.tsx` — index page listing all posts (date + linked title)
