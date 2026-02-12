@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# bob blog
 
-## Getting Started
+Personal blog at [boblog.ink](https://boblog.ink). Built with Next.js 16, React 19, Tailwind CSS 4, TypeScript. Deployed on Vercel.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **MDX posts** — `.mdx` files in `app/markdown/` with YAML frontmatter. Rendered server-side via `next-mdx-remote/rsc`. React components (`PostImage`, `SpotifyEmbed`) can be embedded inline in post content.
+- **Poetry-safe line breaks** — `remark-breaks` plugin preserves single newlines as `<br>`, so poems render correctly without needing blank lines between every line.
+- **Image layouts** — frontmatter `image` + `image_layout` fields. Default floats the image right (good for prose). `side` layout uses flex (good for poetry where text wrapping would break line formatting).
+- **Image lightbox** — clicking a post image opens a fullscreen modal with optional caption (`image_description` frontmatter). Closes via backdrop click, X button, or Escape.
+- **Spotify embeds** — `spotify` frontmatter field or inline `<SpotifyEmbed url="..." />` in MDX. Converts Spotify URLs to embed iframes.
+- **Comments** — Giscus (GitHub Discussions) on each post, mapped by pathname.
+- **RSS feed** — `/feed.xml` generated from post list.
+- **SEO** — `sitemap.xml`, `robots.txt`, per-post OpenGraph metadata with auto-generated descriptions.
+- **Dark mode** — follows `prefers-color-scheme`.
+- **Analytics** — Vercel Analytics.
+
+## Development
+
+```
+npm run dev       # dev server on localhost:3000
+npm run build     # production build
+npm run lint      # ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding a post
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create `app/markdown/my-post.mdx`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```mdx
+---
+title: My Post
+date: 2025-01-01
+tags: [essay]
+image: /images/photo.jpg
+image_description: A caption for the lightbox
+spotify: https://open.spotify.com/track/xxx
+---
 
-## Learn More
+Post content here. Single newlines become line breaks.
 
-To learn more about Next.js, take a look at the following resources:
+<SpotifyEmbed url="https://open.spotify.com/track/yyy" />
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The slug is the filename without extension. Posts without a `date` are excluded from the index.
