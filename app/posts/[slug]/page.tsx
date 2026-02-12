@@ -3,6 +3,7 @@ import Link from "next/link";
 import { renderMarkDown, getAllPosts } from "@/app/lib/markdown";
 import Comments from "@/app/components/comments";
 import PostImage from "@/app/components/post-image";
+import SpotifyEmbed from "@/app/components/spotify-embed";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -74,6 +75,7 @@ export default async function PostPage({
           <article dangerouslySetInnerHTML={{ __html: html }} />
         </>
       )}
+      {meta.spotify && <SpotifyEmbed url={meta.spotify} />}
       <Comments />
       <Link href="/" className="text-sm no-underline">&larr; back</Link>
     </>

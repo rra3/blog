@@ -12,6 +12,7 @@ export interface MarkdownMeta {
     image?: string;
     image_layout?: "float" | "side";
     image_description?: string;
+    spotify?: string;
 }
 
 export async function renderMarkDown(filename: string) {
@@ -35,6 +36,7 @@ export async function renderMarkDown(filename: string) {
             image: data.image,
             image_layout: data.image_layout,
             image_description: data.image_description,
+            spotify: data.spotify,
         } as MarkdownMeta,
     };
 }
