@@ -2,8 +2,8 @@
 @config "../tailwind.config.mjs";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -11,13 +11,6 @@
   --color-foreground: var(--foreground);
   --font-sans: "Lucida Console", Monaco, monospace;
   --font-mono: "Lucida Console", Monaco, monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 html {
