@@ -15,12 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://boblog.ink"),
   title: {
     template: "%s — bob blog",
     default: "bob blog — robert arnold",
   },
   description:
     "Personal blog by Robert Arnold (Bobby Arnold) — writing from Lawrenceville, Georgia, near Atlanta. Essays, poems, and reflections.",
+  alternates: {
+    canonical: "./",
+  },
   keywords: [
     "robert arnold",
     "bobby arnold",
