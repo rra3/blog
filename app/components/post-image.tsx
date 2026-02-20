@@ -2,16 +2,32 @@
 
 import { useState, useEffect, useCallback } from "react";
 
+const sizeClasses: Record<string, string> = {
+  s: "max-w-[150px]",
+  m: "max-w-[250px]",
+  l: "max-w-[400px]",
+  xl: "max-w-[600px]",
+};
+
+const floatClasses: Record<string, string> = {
+  left: "not-prose float-left mr-6 mb-4",
+  right: "not-prose float-right ml-6 mb-4",
+};
+
 export default function PostImage({
   src,
   alt,
   className,
   description,
+  size,
+  float,
 }: {
   src: string;
   alt: string;
   className?: string;
   description?: string;
+  size?: "s" | "m" | "l" | "xl";
+  float?: "left" | "right";
 }) {
   const [open, setOpen] = useState(false);
 
@@ -35,7 +51,7 @@ export default function PostImage({
       <img
         src={src}
         alt={alt}
-        className={`${className ?? ""} cursor-pointer`}
+        className={`${className ?? ""} ${size ? sizeClasses[size] : ""} ${float ? floatClasses[float] : ""} cursor-pointer`}
         onClick={() => setOpen(true)}
       />
       {open && (
