@@ -22,9 +22,6 @@ export const metadata: Metadata = {
   },
   description:
     "Personal blog by Robert Arnold (Bobby Arnold) — writing from Lawrenceville, Georgia, near Atlanta. Essays, poems, and reflections.",
-  alternates: {
-    canonical: "./",
-  },
   keywords: [
     "robert arnold",
     "bobby arnold",
@@ -36,6 +33,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Robert Arnold" }],
   alternates: {
+    canonical: "./",
     types: {
       "application/rss+xml": "https://boblog.ink/feed.xml",
     },
