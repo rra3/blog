@@ -70,11 +70,11 @@ export async function getPostPlainText(filename: string): Promise<string> {
     const { content } = matter(source);
 
     return content
+        .replace(/<[^>]*>/g, "")            // HTML/JSX tags (must run before > is stripped)
         .replace(/!\[.*?\]\(.*?\)/g, "")   // images
         .replace(/\[([^\]]*)\]\(.*?\)/g, "$1") // links → text
         .replace(/#{1,6}\s+/g, "")          // headings
         .replace(/[*_~`>]/g, "")            // inline formatting
-        .replace(/<[^>]*>/g, "")            // HTML/JSX tags
         .replace(/\n+/g, " ")              // newlines → spaces
         .replace(/\s+/g, " ")              // collapse whitespace
         .trim();
