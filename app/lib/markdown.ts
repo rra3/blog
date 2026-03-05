@@ -14,6 +14,7 @@ export interface MarkdownMeta {
     image_layout?: "float" | "side";
     image_description?: string;
     spotify?: string;
+    breaks?: boolean;
 }
 
 const mdxComponents = {
@@ -30,6 +31,7 @@ export async function renderMarkDown(filename: string) {
     );
 
     const source = await readFile(filePath, "utf8");
+    const { data: fm } = matter(source);
 
     const { content, frontmatter } = await compileMDX<MarkdownMeta>({
         source,
@@ -37,7 +39,7 @@ export async function renderMarkDown(filename: string) {
         options: {
             parseFrontmatter: true,
             mdxOptions: {
-                remarkPlugins: [breaks],
+                remarkPlugins: fm.breaks ? [breaks] : [],
             },
         },
     });
